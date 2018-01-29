@@ -24,9 +24,6 @@
     <ClInclude Include="pocketcalculator.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="unitTests.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

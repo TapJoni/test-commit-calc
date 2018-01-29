@@ -1,36 +1,41 @@
-#include <stdio.h>
 #include "stdafx.h"
-
+#include <gtest/gtest.h>
 #include "pocketcalculator.h"
 
-void runTests() {
+TEST(TestCalculator, TestSum) {
 
-	//Answer should be 9
-	sum(3, 6);
-	//Program should printf input is not valid and return to mainscreen
-	sum('k', 12);
-	//Program should printf input is not valid and return to mainscreen
-	sum(-343, 'xssd');
+	/*Test sum function*/
+	EXPECT_EQ(15, sum(10,5));
+	EXPECT_EQ(-9, sum(-4, -5));
 
-	//Program should printf that you can't divide with 0 and return to mainscreen
-	quotient(-23, 0);
-	//Answer should be 0
-	quotient(0, 2);
-
-	//Answer should be -25
-	subtraction(-23, 2);
-	//Program should printf input is not valid and return to mainscreen
-	subtraction('X', -12312);
-	//Program should printf input is not valid and return to mainscreen
-	subtraction(444242, 'ASD');
-
-	//Answer should be 46
-	product(-23, 2);
-	//Program should printf input is not valid and return to mainscreen
-	product('B', 132112);
-	//Program should printf input is not valid and return to mainscreen
-	product(-345544, 'D');
+}
 
 
+TEST(TestCalculator, TestSubtraction) {
 
+	/*Test subtraction function*/
+	EXPECT_EQ(5, subtraction(10, 5));
+	EXPECT_EQ(10, subtraction(-40, -50));
+
+}
+
+
+TEST(TestCalculator, TestProduct) {
+
+
+	/*Test product function*/
+	EXPECT_EQ(18, product(9, 2));
+	EXPECT_EQ(-72, product(-12, 6));
+	EXPECT_EQ(51, product(-17, -3));
+
+}
+
+
+TEST(TestCalculator, TestQuotient) {
+
+	/*Test quotient function*/
+	EXPECT_EQ(0, quotient(10, 0));
+	EXPECT_EQ(-20, quotient(-100, 5));
+	EXPECT_EQ(15, quotient(31, 2));
+	
 }
